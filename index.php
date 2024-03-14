@@ -1,4 +1,5 @@
 <?php
+    /*
     //string
     $name = "John";
     $age = 25;
@@ -31,5 +32,23 @@
     }   
 
     echo "you have ordered {$quantity}X {$food} <br>";
-    echo "total pizza cost is \${$total_cost} <br>"
+    echo "total pizza cost is \${$total_cost} <br>" 
+    */
+
+    // Arithmetic Operators
+
+    $x= 10;
+    $y= 20;
+    $z= null;
+
+    $z= $x + $y;
+    echo "The sum of {$x} and {$y} is {$z} <br>";
+
+    //increament and decreament
+    $x++;
+    echo "The value of x is {$x} <br>";
+    for ($i=1; $i < 10; $i++) { 
+        $power = $i ** $i;
+        echo "The value of i is {$power} <br>";
+    }
 ?>
