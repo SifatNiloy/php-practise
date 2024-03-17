@@ -7,49 +7,21 @@
 </head>
 <body>
     <form action="index.php" method="post">
-        <label for="username">Username</label>
-        <input type="text" name="username" id=""><br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id=""><br>
-        <input type="submit" value="login"> <br>
+        <input type="radio" name="credit_card" value="visa" id=""> Visa <br>
+        <input type="radio" name="credit_card" value="mastercard" id=""> Mastercard <br>
+        <input type="radio" name="credit_card" value="amex" id=""> American Express <br>
+        <input type="submit" name="confirm" value="confirm"> <br>
     </form>
-
 </body>
 </html>
 
 <?php
-    //isset and empty
-    //empty returns true if the variable is an empty string, false, 0, "0", null, or an empty array
-    //isset returns true if the variable exists and is not null
-    // $name=false;
-    // if(isset($name)){
-    //     echo "Name is set";
-    // }else{
-    //     echo "Name is not set";
-    // }
-    
-    // echo "<br>";
-    // if(empty($name)){
-    //     echo "Name is empty";
-    // }else{  
-    //     echo "Name is not empty";
-    // }
-
-    // foreach ($_POST as $key => $value) {
-    //     echo $key . " : " . $value . "<br>";
-    // }
-
-    // if(isset($_POST["login"])){
-    //     echo "you tried to login";
-    // }
-    if (isset ($_POST["username"]) && isset($_POST["password"])){
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        if(empty($username) || empty($password)){
-            echo "Username or password is empty";
-        }else{
-            echo "Username and password are not empty";
-        }
+    if(isset($_POST["confirm"])){
+        if(isset($_POST["credit_card"])){
+            $credit_card = $_POST["credit_card"];
+            echo "You have selected {$credit_card}";
+        } else {
+            echo "You have not selected any credit card";
+        }  
     }
-
 ?>
