@@ -1,6 +1,6 @@
 <?php
     include("database.php");
-
+    /*
     $username = "harrypotter";
     $password = "aceio";
     $hash = password_hash($password, PASSWORD_DEFAULT);
@@ -15,7 +15,18 @@
         }
     } catch(mysqli_sql_exception $e) {
         echo "Couldn't register user. Error: " . $e->getMessage();
+    } */
+
+    $sql= "SELECT * FROM users WHERE user='harrypotter2'";
+    $result = mysqli_query($conn, $sql);
+    if(mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+            echo "id: " . $row["id"]. " - Name: " . $row["user"]. " - Password: " . $row["password"]. "<br>";
+        }
+    } else {
+        echo "0 results . <br>";
     }
+
     mysqli_close($conn);
 ?>
 
